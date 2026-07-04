@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalLayoutApi::class)
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
 package com.asaketik
 
 import android.Manifest
@@ -54,6 +52,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -243,6 +242,7 @@ private fun UdpPanel(viewModel: MainViewModel) {
 }
 
 @Composable
+@OptIn(ExperimentalLayoutApi::class)
 fun VirtualKeyboard(onKeyPressed: (modifier: Byte, keyCode: Byte) -> Unit) {
     val modifierState = remember { mutableStateListOf(false, false, false, false) }
     val modifierByte = buildModifierByte(modifierState)
@@ -295,6 +295,7 @@ fun ToggleButton(label: String, checked: Boolean, onCheckedChange: (Boolean) -> 
 }
 
 @Composable
+@OptIn(ExperimentalLayoutApi::class)
 fun VirtualTouchpad(
     onMove: (dx: Float, dy: Float) -> Unit,
     onClick: (button: Int) -> Unit,
