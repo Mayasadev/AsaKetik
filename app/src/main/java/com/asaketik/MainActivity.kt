@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalLayoutApi::class)
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
 package com.asaketik
 
 import android.Manifest
